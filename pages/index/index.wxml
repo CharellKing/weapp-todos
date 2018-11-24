@@ -1,28 +1,58 @@
 <view class="container">
   <view class="header">
-    <image class="plus" src="../../assets/plus.png"/>
-    <input class="new-todo" value="{{ input }}" placeholder="Anything here..." auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"/>
+    <!-- <image class="plus" src="../../assets/plus.png"/> -->
+    <input class="new-todo" value="{{ input }}" placeholder="主人, 添加一条任务吧." auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"/>
   </view>
   <block wx:if="{{ todos.length }}">
-    <view class="todos">
-      <!-- List items should get the class `completed` when marked as completed -->
+    <!-- <view class="todos">
       <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}" bindtap="toggleTodoHandle" data-index="{{ index }}">
-        <!-- completed: success, todo: circle -->
         <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"/>
         <text class="name">{{ item.name }}</text>
-        <icon class="remove" type="clear" size="16" catchtap="removeTodoHandle" data-index="{{ index }}"/>
+        <icon class="arrow" type="left" size="16" catchtap="removeTodoHandle" data-index="{{ index }}"/>
+        
       </view>
+    </view> -->
+    <view class="todos page__bd" class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}" bindtap="toggleTodoHandle" data-index="{{ index }}">
+ <wux-accordion-group>
+            <wux-accordion title="{{ item.name }}" thumb="https://www.easyicon.net/download/png/1148099/32/">
+            <wux-row>
+              <!--删除-->
+              <wux-col span="1" offset="1">
+                <wux-icon type="ios-trash"/>
+              </wux-col>
+              <!--番茄-->
+              <wux-col span="1" offset="1">
+                <wux-icon type="ios-watch"/>
+              </wux-col>
+              <!--时间-->
+              <wux-col span="1" offset="1">
+                <wux-icon type="ios-clock"/>
+              </wux-col>
+              <!--地点-->
+              <wux-col span="1" offset="1">
+                <wux-icon type="ios-pin"/>
+              </wux-col>
+              <!--人物-->
+              <wux-col span="1" offset="1">
+                <wux-icon type="ios-send"/>
+              </wux-col>
+              <!--分类-->
+              <wux-col span="1" offset="1">
+                <wux-icon type="ios-pricetags"/>
+              </wux-col>
+            </wux-row>
+            </wux-accordion>
+        </wux-accordion-group>
     </view>
     <view class="footer">
-      <text class="btn" bindtap="toggleAllHandle">Toggle all</text>
+      <text></text>
       <text wx:if="{{ leftCount }}">{{ leftCount }} {{ leftCount === 1 ? 'item' : 'items' }} left</text>
-      <text class="btn" wx:if="{{ todos.length > leftCount }}" bindtap="clearCompletedHandle">Clear completed</text>
     </view>
   </block>
   <block wx:else>
     <view class="empty">
-      <text class="title">Congratulations!</text>
-      <text class="content">There's no more work left.</text>
+      <text class="title">恭喜主人!</text>
+      <text class="content">没有剩余的任务</text>
     </view>
   </block>
 </view>

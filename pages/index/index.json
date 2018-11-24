@@ -1,1 +1,10 @@
-{}
+{
+  "navigationBarTitleText": "任务助手",
+  "usingComponents": {
+    "wux-icon": "../../dist/icon/index",
+    "wux-row": "../../dist/row/index",
+    "wux-col": "../../dist/col/index",
+    "wux-accordion-group": "../../dist/accordion-group/index",
+    "wux-accordion": "../../dist/accordion/index"
+  }
+}

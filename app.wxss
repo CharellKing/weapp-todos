@@ -1,3 +1,6 @@
+@import 'assets/styles/weui.wxss';
+@import 'assets/styles/skyvow.wxss';
+
 .container {
   padding: 30rpx;
   border-top: 1rpx solid #e5e5e5;
