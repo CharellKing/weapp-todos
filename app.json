@@ -17,13 +17,13 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "todos",
+        "text": "未完成",
         "iconPath": "assets/todos.png",
         "selectedIconPath": "assets/todos-active.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "logs",
+        "text": "已完成",
         "iconPath": "assets/logs.png",
         "selectedIconPath": "assets/logs-active.png"
       }
